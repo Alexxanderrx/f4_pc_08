@@ -17,7 +17,13 @@ class BlogFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'path' => fake()->imageUrl(),
+            'type' => fake()->randomElement($array = array('BUSINESS', 'DEVELOPMENT')),
+            'name' => fake()->name(),
+            'description' => fake()->sentence($nbWords = 20, $variableNbWords = true),
+            'pathUser' => fake()->imageUrl(),
+            'nameUser' => fake()->name(),
+            'date' => fake()->date(),
         ];
     }
 }
